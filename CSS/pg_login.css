@@ -1,0 +1,155 @@
+/* Estilos gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+/* Estilos específicos para páginas de autenticação */
+.auth-page {
+    background-color: #f5f5f5;
+    min-block-size: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-container {
+    background-color: #004AAD;
+    padding: 5px 0;
+    text-align: center;
+}
+
+.pcd-logo {
+    block-size: 60px;
+}
+
+.auth-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-inline-size: 450px;
+    inline-size: 100%;
+    margin: 30px auto;
+    padding: 30px;
+    flex: 1;
+}
+
+.auth-card h1 {
+    font-size: 24px;
+    color: #333;
+    margin-block-end: 30px;
+    text-align: center;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-block-end: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-block-end: 8px;
+    font-size: 14px;
+    color: #333;
+}
+
+.required {
+    color: red;
+}
+
+.form-control {
+    inline-size: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.form-check {
+    display: flex;
+    align-items: center;
+    margin-block-end: 20px;
+}
+
+.form-check input {
+    margin-inline-end: 10px;
+}
+
+.terms-link {
+    color: #004AAD;
+    text-decoration: none;
+}
+
+.btn-blue {
+    background-color: #004AAD;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    inline-size: 100%;
+    margin-block-end: 15px;
+    font-weight: bold;
+}
+
+.btn-blue :hover{
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #32CD32;
+}
+
+.btn-gray {
+    background-color: #a0a0a0;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    inline-size: 100%;
+    margin-block-end: 15px;
+    font-weight: bold;
+}
+
+.recover-password {
+    text-align: center;
+    margin-block-start: 10px;
+}
+
+.recover-password a {
+    color: #004AAD;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.auth-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    color: #666;
+    font-size: 14px;
+    max-inline-size: 450px;
+    margin: 0 auto 20px;
+    inline-size: 100%;
+}
+
+.auth-footer a {
+    color: #666;
+    text-decoration: none;
+}

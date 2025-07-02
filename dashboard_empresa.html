@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard PCD - Empresa</title>
+    <link rel="stylesheet" href="CSS/dashboard_empresa.css">
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">PCD</a>
+        <div class="nav-menu">
+            <a href="pg_inicial.html" class="nav-link">Página Inicial</a>
+            <a href="pg_buscar_vagas.html" class="nav-link">Buscar Vagas</a>
+            <div class="user-profile">
+                <span>Nicolas Gonzaga</span>
+                <div class="profile-pic"></div>
+                <span class="dropdown-arrow">▼</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="sidebar">
+            <div class="menu-item active" data-section="perfil">
+                <div class="menu-icon">🏠</div>
+                Perfil da Empresa
+            </div>
+            <div class="menu-item" data-section="cadastrar">
+                <div class="menu-icon">💼</div>
+                Cadastrar Vaga
+            </div>
+            <div class="menu-item" data-section="vagas">
+                <div class="menu-icon">📄</div>
+                Minhas Vagas
+            </div>
+            <div class="menu-item" data-section="planos">
+                <div class="menu-icon">💳</div>
+                Planos
+            </div>
+            <div class="menu-item" data-section="conta">
+                <div class="menu-icon">⚙️</div>
+                Conta
+            </div>
+            <div class="menu-item" data-section="cursos">
+               <div class="menu-icon">🎓</div>
+                Cadastrar Curso
+            </div>
+        </div>
+
+        <div class="content">
+            <!-- Perfil da Empresa -->
+            <div class="content-section active" id="perfil">
+                <div class="featured-content">
+                    <div class="featured-image">🏢</div>
+                    <div>
+                        <h2 class="featured-title">Dashboard Empresa</h2>
+                        <p>Gerencie suas vagas e encontre os melhores talentos PCD.</p>
+                    </div>
+                    <div class="nav-buttons">
+                        <button class="nav-button">←</button>
+                        <button class="nav-button">→</button>
+                    </div>
+                </div>
+
+                <div class="company-info">
+                    <div class="company-card">
+                        <div class="company-logo">👤</div>
+                        <div class="company-details">
+                            <h3>SENAI CIMATEC</h3>
+                            <p>CNPJ: 00.000.000/0000-00</p>
+                        </div>
+                    </div>
+                    <div class="company-meta">
+                        <div>
+                            <strong>Responsável:</strong> Nicolas Gonzaga
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-cards">
+                    <div class="info-section">
+                        <div class="info-header">
+                            <h3>📊 Dados cadastrais</h3>
+                            <button class="btn btn-action">Alterar</button>
+                        </div>
+                        <p>Mantenha seus dados sempre atualizados para melhor visibilidade.</p>
+                    </div>
+
+                    <div class="info-section">
+                        <div class="info-header">
+                            <h3>💳 Plano Ouro</h3>
+                            <button class="btn btn-action"><a href="planos_empresa.html">Sobre</a></button>
+                        </div>
+                        <p>Aproveite todos os benefícios do seu plano atual.</p>
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">5</div>
+                        <div class="stat-label">Vagas Ativas</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cadastrar Vaga -->
+            <div class="content-section" id="cadastrar">
+                <div class="dashboard-card">
+                    <h2 class="card-title">Cadastrar Nova Vaga</h2>
+                    
+                    <div class="form-container">
+                        <div class="form-group">
+                            <label class="form-label required">Título da Vaga:</label>
+                            <input type="text" class="form-input" placeholder="Ex: Desenvolvedor Frontend">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label required">Tipo de Contrato:</label>
+                            <select class="form-input">
+                                <option>CLT</option>
+                                <option>PJ</option>
+                                <option>Estágio</option>
+                                <option>Temporário</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label required">Modalidade:</label>
+                            <select class="form-input">
+                                <option>Presencial</option>
+                                <option>Remoto</option>
+                                <option>Híbrido</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label required">Salário:</label>
+                            <input type="text" class="form-input" placeholder="R$ 0,00">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label required">Localização:</label>
+                            <input type="text" class="form-input" placeholder="Cidade, Estado">
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label class="form-label required">Descrição da Vaga:</label>
+                            <textarea class="form-textarea" rows="5" placeholder="Descreva as responsabilidades e requisitos da vaga..."></textarea>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label class="form-label required">Requisitos:</label>
+                            <textarea class="form-textarea" rows="4" placeholder="Liste os requisitos obrigatórios e desejáveis..."></textarea>
+                        </div>
+
+                    </div>
+
+                    <div style="display: flex; justify-content: flex-end; gap: 1rem; margin-block-start: 2rem;">
+                        <button class="btn-next">Publicar Vaga</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Minhas Vagas -->
+            <div class="content-section" id="vagas">
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h2 class="card-title">Minhas Vagas</h2>
+                        <button class="btn" onclick="showSection('cadastrar')">+ Nova Vaga</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Planos -->
+            <div class="content-section" id="planos">
+                <div class="dashboard-card">
+                    <h2 class="card-title">Gerenciar Planos</h2>
+                    
+                    <div class="info-card">
+                        <div class="info-header">
+                            <h3>Plano Atual: Ouro</h3>
+                            <span class="status-badge status-active">Ativo</span>
+                        </div>
+                        <p><strong>Renovação:</strong> 26/06/2025</p>
+                        <p><strong>Valor:</strong> R$ 299,90/mês</p>
+                        
+                        <ul class="plan-features">
+                            <li>Até 50 vagas simultâneas</li>
+                            <li>Acesso a banco de currículos</li>
+                            <li>Relatórios avançados</li>
+                            <li>Suporte prioritário</li>
+                            <li>Destaque nas vagas</li>
+                        </ul>
+                        
+                        <div style="margin-block-start: 1rem;">
+                            <button class="btn"><a href="planos_empresa.html">Alterar Plano</a></button>
+                            <button class="btn btn-secondary">Histórico de Pagamentos</button>
+                        </div>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">15/50</div>
+                            <div class="stat-label">Vagas Utilizadas</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">250</div>
+                            <div class="stat-label">Visualizações do Perfil</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">89</div>
+                            <div class="stat-label">Candidatos Visualizados</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">23</div>
+                            <div class="stat-label">Dias Restantes</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Cadastrar Curso -->
+                        <div class="content-section" id="cursos">
+                          <div class="dashboard-card">
+                          <h2 class="card-title">Cadastrar Novo Curso</h2>
+        
+        <div class="form-container">
+            <div class="form-group">
+                <label class="form-label required">Nome do Curso:</label>
+                <input type="text" class="form-input" placeholder="Ex: Excel Básico">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label required">Área de Conhecimento:</label>
+                <select class="form-input">
+                    <option>Selecione uma área</option>
+                    <option>Informática</option>
+                    <option>Administração</option>
+                    <option>Comunicação</option>
+                    <option>Serviços</option>
+                    <option>Outros</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label required">Carga Horária:</label>
+                <input type="text" class="form-input" placeholder="Ex: 40 horas">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label required">Modalidade:</label>
+                <select class="form-input">
+                    <option>Presencial</option>
+                    <option>Online</option>
+                    <option>Híbrido</option>
+                </select>
+            </div>
+
+            <div class="form-group full-width">
+                <label class="form-label required">Descrição do Curso:</label>
+                <textarea class="form-textarea" rows="5" placeholder="Descreva o conteúdo, objetivos e público-alvo do curso..."></textarea>
+            </div>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; gap: 1rem; margin-block-start: 2rem;">
+            <button class="btn btn-secondary">Salvar Rascunho</button>
+            <button class="btn-next">Publicar Curso</button>
+        </div>
+    </div>
+</div>
+        
+            <!-- Conta -->
+            <div class="content-section" id="conta">
+                <div class="dashboard-card">
+                    <h2 class="card-title">Configurações da Conta</h2>
+                    
+                    <div class="form-container">
+                        <div class="form-group">
+                            <label class="form-label required">Nome da Empresa:</label>
+                            <input type="text" class="form-input" value="SENAI CIMATEC">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label required">CNPJ:</label>
+                            <input type="text" class="form-input" value="00.000.000/0000-00">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label required">Email:</label>
+                            <input type="email" class="form-input" value="contato@senai.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label required">Telefone:</label>
+                            <input type="tel" class="form-input" value="(11) 99999-9999">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label required">Responsável:</label>
+                            <input type="text" class="form-input" value="Nicolas Gonzaga">
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label class="form-label required">Endereço:</label>
+                            <input type="text" class="form-input" placeholder="Rua, número, bairro">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Cidade:</label>
+                            <input type="text" class="form-input" placeholder="Salvador">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Estado:</label>
+                            <select class="form-input">
+                                <option>BA</option>
+                                <option>SP</option>
+                                <option>RJ</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label class="form-label">Descrição da Empresa:</label>
+                            <textarea class="form-textarea" rows="4" placeholder="Descreva sua empresa, missão e valores..."></textarea>
+                        </div>
+                    </div>
+
+                    <hr style="margin: 2rem 0;">
+
+                    <h3 style="margin-block-end: 1rem;">Alterar Senha</h3>
+                    <div class="form-container">
+                        <div class="form-group">
+                            <label class="form-label">Senha atual:</label>
+                            <input type="password" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Nova senha:</label>
+                            <input type="password" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Confirmar nova senha:</label>
+                            <input type="password" class="form-input">
+                        </div>
+                    </div>
+
+                    <div style="display: flex; justify-content: flex-end; gap: 1rem; margin-block-start: 2rem;">
+                        <button class="btn btn-secondary">Cancelar</button>
+                        <button class="btn">Salvar Alterações</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Função para mostrar seções
+        function showSection(sectionId) {
+            // Remove active de todos os itens do menu
+            document.querySelectorAll('.menu-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Remove active de todas as seções
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Adiciona active na seção selecionada
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Adiciona active no item do menu correspondente
+            document.querySelector(`[data-section="${sectionId}"]`).classList.add('active');
+        }
+
+        // Event listeners para os itens do menu
+        document.querySelectorAll('.menu-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const sectionToShow = this.getAttribute('data-section');
+                showSection(sectionToShow);
+            });
+        });
+
+        // Simulação de funcionalidades específicas
+        document.addEventListener('DOMContentLoaded', function() {
+            // Botão de alterar dados cadastrais
+            const alterarBtn = document.querySelector('.info-section .btn-action');
+            if (alterarBtn && alterarBtn.textContent === 'Alterar') {
+                alterarBtn.addEventListener('click', function() {
+                    showSection('conta');
+                });
+            }
+
+            // Botão sobre plano
+            const sobreBtn = document.querySelector('.info-section:last-of-type .btn-action');
+            if (sobreBtn && sobreBtn.textContent === 'Sobre') {
+                sobreBtn.addEventListener('click', function() {
+                    showSection('planos');
+                });
+            }
+
+            // Botões de ação nas vagas
+            document.querySelectorAll('.job-item .btn-action').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    if (this.textContent === 'Ver Candidatos') {
+                        alert('Funcionalidade: Ver candidatos da vaga');
+                    } else if (this.textContent === 'Editar') {
+                        showSection('cadastrar');
+                        alert('Carregando dados da vaga para edição...');
+                    } else if (this.textContent === 'Reativar') {
+                        this.textContent = 'Pausar';
+                        const statusBadge = this.closest('.job-item').querySelector('.status-badge');
+                        statusBadge.textContent = 'Ativa';
+                        statusBadge.className = 'status-badge status-active';
+                        alert('Vaga reativada com sucesso!');
+                    }
+                });
+            });
+
+            // Botão publicar vaga
+            const publicarBtn = document.querySelector('.btn-next');
+            if (publicarBtn && publicarBtn.textContent === 'Publicar Vaga') {
+                publicarBtn.addEventListener('click', function() {
+                    const titulo = document.querySelector('#cadastrar input[placeholder*="Desenvolvedor"]').value;
+                    if (!titulo) {
+                        alert('Por favor, preencha o título da vaga.');
+                        return;
+                    }
+                    alert('Vaga publicada com sucesso!');
+                    showSection('vagas');
+                });
+            }
+
+            // Botão salvar rascunho
+            const rascunhoBtn = document.querySelector('.btn-secondary');
+            if (rascunhoBtn && rascunhoBtn.textContent === 'Salvar Rascunho') {
+                rascunhoBtn.addEventListener('click', function() {
+                    alert('Rascunho salvo com sucesso!');
+                });
+            }
+
+            // Botões de navegação do carousel
+            const navButtons = document.querySelectorAll('.nav-button');
+            navButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Simulação de navegação no carousel
+                    alert('Navegando pelo carousel de empresas parceiras...');
+                });
+            });
+
+            // Botão salvar alterações da conta
+            const salvarContaBtn = document.querySelector('#conta .btn:last-of-type');
+            if (salvarContaBtn && salvarContaBtn.textContent === 'Salvar Alterações') {
+                salvarContaBtn.addEventListener('click', function() {
+                    alert('Dados atualizados com sucesso!');
+                });
+            }
+
+            // Validação de formulários em tempo real
+            const inputs = document.querySelectorAll('.form-input');
+            inputs.forEach(input => {
+                input.addEventListener('blur', function() {
+                    if (this.hasAttribute('required') && !this.value) {
+                        this.style.borderColor = '#e74c3c';
+                    } else {
+                        this.style.borderColor = '#e0e0e0';
+                    }
+                });
+                
+                input.addEventListener('focus', function() {
+                    this.style.borderColor = '#1DB584';
+                });
+            });
+
+            // Formatação automática de campos
+            const cnpjInput = document.querySelector('input[value*="00.000.000/0000-00"]');
+            if (cnpjInput) {
+                cnpjInput.addEventListener('input', function() {
+                    let value = this.value.replace(/\D/g, '');
+                    value = value.replace(/^(\d{2})(\d)/, '$1.$2');
+                    value = value.replace(/^(\d{2})\.(\d{3})(\d)/, '$1.$2.$3');
+                    value = value.replace(/\.(\d{3})(\d)/, '.$1/$2');
+                    value = value.replace(/(\d{4})(\d)/, '$1-$2');
+                    this.value = value;
+                });
+            }
+
+            const telefoneInput = document.querySelector('input[value*="(11) 99999-9999"]');
+            if (telefoneInput) {
+                telefoneInput.addEventListener('input', function() {
+                    let value = this.value.replace(/\D/g, '');
+                    value = value.replace(/^(\d{2})(\d)/g, '($1) $2');
+                    value = value.replace(/(\d)(\d{4})$/, '$1-$2');
+                    this.value = value;
+                });
+            }
+
+            // Contador de caracteres para textareas
+            const textareas = document.querySelectorAll('.form-textarea');
+            textareas.forEach(textarea => {
+                const maxLength = 500;
+                textarea.setAttribute('maxlength', maxLength);
+                
+                const counter = document.createElement('div');
+                counter.style.textAlign = 'right';
+                counter.style.fontSize = '0.8rem';
+                counter.style.color = '#666';
+                counter.style.marginTop = '0.25rem';
+                
+                textarea.parentNode.appendChild(counter);
+                
+                function updateCounter() {
+                    const remaining = maxLength - textarea.value.length;
+                    counter.textContent = `${remaining} caracteres restantes`;
+                    counter.style.color = remaining < 50 ? '#e74c3c' : '#666';
+                }
+                
+                textarea.addEventListener('input', updateCounter);
+                updateCounter();
+            });
+
+            // Animações suaves para transições
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+
+            document.querySelectorAll('.dashboard-card, .info-section, .stat-card').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(el);
+            });
+
+            // Efeito de hover nos cards
+            document.querySelectorAll('.stat-card').forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        });
+
+        // Função para simular upload de arquivos
+        function handleFileUpload(input) {
+            const files = input.files;
+            if (files.length > 0) {
+                alert(`Arquivo "${files[0].name}" selecionado com sucesso!`);
+            }
+        }
+
+        // Auto-save para rascunhos (simulação)
+        let autoSaveInterval;
+        function startAutoSave() {
+            autoSaveInterval = setInterval(() => {
+                const currentSection = document.querySelector('.content-section.active');
+                if (currentSection && currentSection.id === 'cadastrar') {
+                    const inputs = currentSection.querySelectorAll('.form-input, .form-textarea');
+                    let hasContent = false;
+                    
+                    inputs.forEach(input => {
+                        if (input.value.trim()) {
+                            hasContent = true;
+                        }
+                    });
+                    
+                    if (hasContent) {
+                        console.log('Auto-salvando rascunho...');
+                        // Aqui você implementaria a lógica real de auto-save
+                    }
+                }
+            }, 30000); // Auto-save a cada 30 segundos
+        }
+
+        function stopAutoSave() {
+            if (autoSaveInterval) {
+                clearInterval(autoSaveInterval);
+            }
+        }
+
+        // Iniciar auto-save quando carregar a página
+        startAutoSave();
+
+        // Parar auto-save quando sair da página
+        window.addEventListener('beforeunload', stopAutoSave);
+    </script>
+</body>
+<script src="JS/dashboard_empresa.js"></script>
+<script src="JS/cadastrarVaga.js"></script>
+</html>

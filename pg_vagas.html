@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo PCD - Vagas</title>
+    <link rel="stylesheet" href="CSS/pg_vagas.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo-section">
+                <div class="logo">PCD</div>
+                <h1>Vagas</h1>
+            </div>
+            <div class="user-section">
+                <div class="user-info">
+                    <img src="/api/placeholder/40/40" alt="Avatar" class="user-avatar">
+                    <span>Usuário</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container main-content">
+            <aside class="sidebar">
+                <h2>Ordenar por:</h2>
+                
+                <div class="filter-section">
+                    <label for="salary">Pretensão salarial</label>
+                    <div class="select-wrapper">
+                        <select id="salary">
+                            <option value="">Escolha a pretensão salarial</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="filter-section">
+                    <label for="professional-area">Área Profissional</label>
+                    <div class="select-wrapper">
+                        <select id="professional-area">
+                            <option value="">Selecione o nível</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="filter-section">
+                    <label for="mode">Modalidade</label>
+                    <div class="select-wrapper">
+                        <select id="mode">
+                            <option value="">Selecione a modalidade</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <button class="btn-filter">Filtrar</button>
+            </aside>
+            
+            <section class="content">
+                <div class="search-bar">
+                    <input type="text" placeholder="Cargo ou palavra chave" class="search-input">
+                    <input type="text" placeholder="Localização" class="search-input">
+                    <button class="btn-search">Pesquisar vagas</button>
+                </div>
+                
+                <div id="jobs-container">
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

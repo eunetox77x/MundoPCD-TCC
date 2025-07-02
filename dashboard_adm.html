@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Administrador - PCD</title>
+    <link rel="stylesheet" href="CSS/dashboard_adm.css">
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">PCD Admin</a>
+        <div class="nav-menu">
+            <a href="#" class="nav-link">Dashboard</a>
+            <a href="#" class="nav-link">Relatórios</a>
+            <div class="user-profile">
+                <span>Administrador</span>
+                <div class="profile-pic"></div>
+                <span class="dropdown-arrow">▼</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="sidebar">
+            <div class="menu-item active" data-section="dashboard">
+                <div class="menu-icon">📊</div>
+                Dashboard
+            </div>
+            <div class="menu-item" data-section="planos">
+                <div class="menu-icon">💳</div>
+                Gerenciar Planos
+            </div>
+            <div class="menu-item" data-section="empresas">
+                <div class="menu-icon">🏢</div>
+                Empresas
+            </div>
+            <div class="menu-item" data-section="usuarios">
+                <div class="menu-icon">👥</div>
+                Usuários
+            </div>
+            <div class="menu-item" data-section="configuracoes">
+                <div class="menu-icon">⚙️</div>
+                Configurações
+            </div>
+        </div>
+
+        <div class="content">
+            <!-- Dashboard -->
+            <div class="content-section active" id="dashboard">
+                <div class="dashboard-card">
+                    <h2 class="card-title">📊 Dashboard Administrativo</h2>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">156</div>
+                            <div class="stat-label">Empresas Cadastradas</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">2,847</div>
+                            <div class="stat-label">Usuários Ativos</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">1,234</div>
+                            <div class="stat-label">Vagas Publicadas</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">R$ 45.678</div>
+                            <div class="stat-label">Receita Mensal</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gerenciar Planos -->
+            <div class="content-section" id="planos">
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h2 class="card-title">💳 Gerenciar Planos</h2>
+                        <button class="btn" onclick="openModal('addPlanModal')">+ Adicionar Plano</button>
+                    </div>
+                    
+                    <div id="alertContainer"></div>
+                    
+                    <div class="plans-grid" id="plansGrid">
+                        <!-- Planos serão carregados aqui -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Empresas -->
+            <div class="content-section" id="empresas">
+                <div class="dashboard-card">
+                    <h2 class="card-title">🏢 Empresas Cadastradas</h2>
+                    <p>Funcionalidade em desenvolvimento...</p>
+                </div>
+            </div>
+
+            <!-- Usuários -->
+            <div class="content-section" id="usuarios">
+                <div class="dashboard-card">
+                    <h2 class="card-title">👥 Usuários do Sistema</h2>
+                    <p>Funcionalidade em desenvolvimento...</p>
+                </div>
+            </div>
+
+            <!-- Configurações -->
+            <div class="content-section" id="configuracoes">
+                <div class="dashboard-card">
+                    <h2 class="card-title">⚙️ Configurações do Sistema</h2>
+                    <p>Funcionalidade em desenvolvimento...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Adicionar/Editar Plano -->
+    <div id="addPlanModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('addPlanModal')">&times;</span>
+            <h3 id="modalTitle">Adicionar Novo Plano</h3>
+            
+            <form id="planForm">
+                <div class="form-container">
+                    <div class="form-group">
+                        <label class="form-label required">Nome do Plano:</label>
+                        <input type="text" id="planName" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label required">Preço (R$):</label>
+                        <input type="number" id="planPrice" class="form-input" step="0.01" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label required">Período:</label>
+                        <select id="planPeriod" class="form-input" required>
+                            <option value="">Selecione</option>
+                            <option value="mensal">Mensal</option>
+                            <option value="anual">Anual</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label required">Limite de Vagas:</label>
+                        <input type="number" id="planJobLimit" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label class="form-label required">Recursos (um por linha):</label>
+                        <textarea id="planFeatures" class="form-textarea" rows="6" placeholder="Digite cada recurso em uma linha separada" required></textarea>
+                    </div>
+                </div>
+                
+                <div style="display: flex; justify-content: flex-end; gap: 1rem; margin-block-start: 2rem;">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('addPlanModal')">Cancelar</button>
+                    <button type="submit" class="btn">Salvar Plano</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Dados dos planos (simulação de banco de dados)
+        let plans = [
+            {
+                id: 1,
+                name: 'Básico',
+                price: 99.90,
+                period: 'mensal',
+                jobLimit: 10,
+                features: ['Até 10 vagas simultâneas', 'Suporte básico', 'Relatórios simples']
+            },
+            {
+                id: 2,
+                name: 'Profissional',
+                price: 199.90,
+                period: 'mensal',
+                jobLimit: 25,
+                features: ['Até 25 vagas simultâneas', 'Suporte prioritário', 'Relatórios avançados', 'Destaque nas vagas']
+            },
+            {
+                id: 3,
+                name: 'Ouro',
+                price: 299.90,
+                period: 'mensal',
+                jobLimit: 50,
+                features: ['Até 50 vagas simultâneas', 'Acesso a banco de currículos', 'Relatórios avançados', 'Suporte prioritário', 'Destaque nas vagas']
+            }
+        ];
+
+        let editingPlanId = null;
+
+        // Função para mostrar seções
+        function showSection(sectionId) {
+            document.querySelectorAll('.menu-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            document.getElementById(sectionId).classList.add('active');
+            document.querySelector(`[data-section="${sectionId}"]`).classList.add('active');
+        }
+
+        // Event listeners para o menu
+        document.querySelectorAll('.menu-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const sectionToShow = this.getAttribute('data-section');
+                showSection(sectionToShow);
+            });
+        });
+
+        // Funções para modal
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+            resetForm();
+        }
+
+        function resetForm() {
+            document.getElementById('planForm').reset();
+            document.getElementById('modalTitle').textContent = 'Adicionar Novo Plano';
+            editingPlanId = null;
+        }
+
+        // Função para renderizar planos
+        function renderPlans() {
+            const plansGrid = document.getElementById('plansGrid');
+            plansGrid.innerHTML = '';
+
+            plans.forEach(plan => {
+                const planCard = document.createElement('div');
+                planCard.className = 'plan-card';
+                planCard.innerHTML = `
+                    <div class="plan-header">
+                        <div class="plan-name">${plan.name}</div>
+                        <div>
+                            <div class="plan-price">R$ ${plan.price.toFixed(2).replace('.', ',')}</div>
+                            <div class="plan-price-period">/${plan.period}</div>
+                        </div>
+                    </div>
+                    <ul class="plan-features">
+                        ${plan.features.map(feature => `<li>${feature}</li>`).join('')}
+                    </ul>
+                    <div class="plan-actions">
+                        <button class="btn" onclick="editPlan(${plan.id})">Editar</button>
+                        <button class="btn btn-danger" onclick="deletePlan(${plan.id})">Remover</button>
+                    </div>
+                `;
+                plansGrid.appendChild(planCard);
+            });
+        }
+
+        // Função para adicionar/editar plano
+        document.getElementById('planForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const planData = {
+                name: document.getElementById('planName').value,
+                price: parseFloat(document.getElementById('planPrice').value),
+                period: document.getElementById('planPeriod').value,
+                jobLimit: parseInt(document.getElementById('planJobLimit').value),
+                features: document.getElementById('planFeatures').value.split('\n').filter(f => f.trim())
+            };
+
+            if (editingPlanId) {
+                // Editar plano existente
+                const planIndex = plans.findIndex(p => p.id === editingPlanId);
+                plans[planIndex] = { ...plans[planIndex], ...planData };
+                showAlert('Plano atualizado com sucesso!', 'success');
+            } else {
+                // Adicionar novo plano
+                const newPlan = {
+                    id: Date.now(),
+                    ...planData
+                };
+                plans.push(newPlan);
+                showAlert('Plano adicionado com sucesso!', 'success');
+            }
+
+            renderPlans();
+            closeModal('addPlanModal');
+        });
+
+        // Função para editar plano
+        function editPlan(planId) {
+            const plan = plans.find(p => p.id === planId);
+            if (!plan) return;
+
+            editingPlanId = planId;
+            document.getElementById('modalTitle').textContent = 'Editar Plano';
+            document.getElementById('planName').value = plan.name;
+            document.getElementById('planPrice').value = plan.price;
+            document.getElementById('planPeriod').value = plan.period;
+            document.getElementById('planJobLimit').value = plan.jobLimit;
+            document.getElementById('planFeatures').value = plan.features.join('\n');
+
+            openModal('addPlanModal');
+        }
+
+        // Função para deletar plano
+        function deletePlan(planId) {
+            if (confirm('Tem certeza que deseja remover este plano?')) {
+                plans = plans.filter(p => p.id !== planId);
+                renderPlans();
+                showAlert('Plano removido com sucesso!', 'success');
+            }
+        }
+
+        // Função para mostrar alertas
+        function showAlert(message, type) {
+            const alertContainer = document.getElementById('alertContainer');
+            const alert = document.createElement('div');
+            alert.className = `alert alert-${type}`;
+            alert.textContent = message;
+            
+            alertContainer.appendChild(alert);
+            
+            setTimeout(() => {
+                alert.remove();
+            }, 5000);
+        }
+
+        // Fechar modal ao clicar fora
+        window.onclick = function(event) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                    resetForm();
+                }
+            });
+        }
+
+        // Inicializar página
+        document.addEventListener('DOMContentLoaded', function() {
+            renderPlans();
+        });
+    </script>
+</body>
+</html>

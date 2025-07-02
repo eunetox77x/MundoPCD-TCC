@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo PCD - Recuperar senha</title>
+    <link rel="stylesheet" href="CSS/recupera_senha.css">
+</head>
+<body class="auth-page">
+    <div class="auth-container">
+        <div class="logo-container">
+            <div class="logo">
+                <img src="Images/logo_pcd_container.png" alt="Logo PCD" class="pcd-logo">
+            </div>
+        </div>
+        
+        <div class="auth-card">
+            <h1>Recuperar senha</h1>
+            <p class="subtitle">Digite seu e-mail cadastrado e enviaremos um link para redefinir sua senha.</p>
+            
+            <div class="success-message" id="successMessage">
+                Um e-mail com instruções para redefinir sua senha foi enviado para o endereço informado.
+            </div>
+            
+            <div class="error-message" id="errorMessage">
+                E-mail não encontrado. Verifique se o endereço está correto ou crie uma nova conta.
+            </div>
+            
+            <form class="auth-form" id="recoverForm">
+                <div class="form-group">
+                    <label for="email">E-mail <span class="required">*</span></label>
+                    <input type="email" id="email" class="form-control" required placeholder="Digite seu e-mail">
+                </div>
+                
+                <button type="submit" class="btn-blue">Enviar link de recuperação</button>
+                
+                <button type="button" class="btn-gray" onclick="window.location.href='cadastro.html'">Criar nova conta</button>
+                
+                <div class="back-to-login">
+                    <a href="pg_login.html">← Voltar ao login</a>
+                </div>
+            </form>
+        </div>
+        
+        <footer class="auth-footer">
+            <div>Mundo PCD</div>
+            <div>&copy; 2024</div>
+            <div><a href="politica_privacidade.html">Política de privacidade</a></div>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('recoverForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const successMessage = document.getElementById('successMessage');
+            const errorMessage = document.getElementById('errorMessage');
+            
+            // Esconder mensagens anteriores
+            successMessage.style.display = 'none';
+            errorMessage.style.display = 'none';
+            
+            // Validação básica do e-mail
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            if (!emailRegex.test(email)) {
+                errorMessage.textContent = 'Por favor, digite um e-mail válido.';
+                errorMessage.style.display = 'block';
+                return;
+            }
+            
+            // Simular envio (em uma aplicação real, você faria uma requisição para o servidor)
+            setTimeout(() => {
+                // Simular sucesso (em 90% dos casos para demonstração)
+                if (Math.random() > 0.1) {
+                    successMessage.style.display = 'block';
+                    document.getElementById('email').value = '';
+                } else {
+                    errorMessage.textContent = 'E-mail não encontrado. Verifique se o endereço está correto ou crie uma nova conta.';
+                    errorMessage.style.display = 'block';
+                }
+            }, 1000);
+        });
+        
+        // Limpar mensagens quando o usuário começar a digitar novamente
+        document.getElementById('email').addEventListener('input', function() {
+            document.getElementById('successMessage').style.display = 'none';
+            document.getElementById('errorMessage').style.display = 'none';
+        });
+    </script>
+</body>
+</html>

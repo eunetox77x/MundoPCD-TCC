@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/detalhe_curso.css">
+    <title>PCD Cursos - Excel Básico</title>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">PCD Cursos</div>
+        <div class="user-profile">
+            <div class="avatar"></div>
+            <span>usuário</span>
+        </div>
+    </header>
+
+    <div class="card">
+        <div class="course-header">
+            <div class="excel-icon">X</div>
+            <div>
+                <h1 class="course-title">Excel Básico</h1>
+                <p class="course-description">
+                    O curso de Excel básico é ideal para quem deseja aprender os primeiros passos nessa ferramenta essencial.
+                    Você vai dominar a criação e formatação de planilhas, inserção e organização de dados, uso de fórmulas e
+                    funções simples, além de criar gráficos e aplicar recursos como filtros e formatação condicional. Com uma
+                    abordagem prática e objetiva, este curso vai ajudar você a ganhar mais eficiência e produtividade no Excel,
+                    mesmo sem experiência prévia.
+                </p>
+            </div>
+            <div class="course-info">
+                <div class="duration">
+                    <span>Duração: 60 horas</span>
+                </div>
+                <div class="separator">|</div>
+                <div class="modality">
+                    Modalidade: <span class="online-badge">Online</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-container">
+            <div class="tab active" data-tab="conteudo">Conteúdo</div>
+            <div class="tab" data-tab="detalhes">Detalhes</div>
+        </div>
+
+        <div class="tab-content">
+            <div id="conteudo" class="content-tab active">
+                <ul class="module-list">
+                    <li>Módulo 01 - Introdução</li>
+                    <li>Módulo 02 - Manipulação de planilhas</li>
+                    <li>Módulo 03 - Dados e células</li>
+                    <li>Módulo 04 - Fórmulas e funções básicas</li>
+                    <li>Módulo 05 - Gráficos</li>
+                </ul>
+            </div>
+            <div id="detalhes" class="content-tab">
+                <div class="details-section">
+                    <h3>Pré-requisitos</h3>
+                    <p>Sem pré-requisitos necessários para a realização deste curso</p>
+                </div>
+                <div class="details-section">
+                    <h3>Idade mínima</h3>
+                    <p>14 anos</p>
+                </div>
+                <div class="details-section">
+                    <h3>Prazo</h3>
+                    <p>Você tem 120 dias para a conclusão deste curso</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="btn-container">
+            <button class="btn-buy">Adquirir agora</button>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                document.querySelectorAll('.content-tab').forEach(content => content.classList.remove('active'));
+                document.getElementById(tab.dataset.tab).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

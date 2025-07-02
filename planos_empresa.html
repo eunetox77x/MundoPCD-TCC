@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planos PCD - Encontre os Melhores Talentos</title>
+    <link rel="stylesheet" href="CSS/planos_empresas.css">
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">PCD</a>
+        <div class="nav-menu">
+            <a href="pg_inicial.html" class="nav-link">Página Inicial</a>
+            <a href="pg_buscar_vagas.html" class="nav-link">Buscar Vagas</a>
+            <a href="dashboard_empresa.html" class="nav-link">Dashboard</a>
+            <div class="user-profile">
+                <span>Usuario</span>
+                <div class="profile-pic">Us</div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Encontre os Melhores Planos pra sua empresa</h1>
+            <p class="hero-subtitle">Escolha o plano ideal para sua empresa e conecte-se com profissionais qualificados</p>
+            
+            <div class="billing-toggle">
+                <button class="billing-option active" onclick="toggleBilling('monthly')">Mensal</button>
+                <button class="billing-option" onclick="toggleBilling('yearly')">Anual
+                    <span class="discount-badge">-20%</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <div class="plans-container">
+        <div class="plans-grid">
+            <!-- Plano Básico -->
+            <div class="plan-card">
+                <div class="plan-header">
+                    <div class="plan-icon">🌱</div>
+                    <h3 class="plan-name">Básico</h3>
+                    <p class="plan-description">Ideal para pequenas empresas iniciando na inclusão</p>
+                </div>
+                
+                <div class="plan-price">
+                    <div class="price-amount">
+                        <span class="price-currency">R$</span>
+                        <span class="monthly-price">99</span>
+                        <span class="yearly-price" style="display: none;">79</span>
+                    </div>
+                    <div class="price-period">/mês</div>
+                    <div class="yearly-savings" style="display: none;">
+                        <span class="original-price">R$ 99</span>
+                        <small>Economize R$ 240/ano</small>
+                    </div>
+                </div>
+                
+                <ul class="plan-features">
+                    <li>
+                        <span class="feature-icon">✓</span>
+                        <span class="feature-text">Até 5 vagas simultâneas</span>
+                    </li>
+                    <li>
+                        <span class="feature-icon">✓</span>
+                        <span class="feature-text">Perfil básico da empresa</span>
+                    </li>
+                    <li>
+                        <span class="feature-icon">✓</span>
+                        <span class="feature-text">Recebimento de candidaturas</span>
+                    </li>
+                    <li>
+                        <span class="feature-icon">✓</span>
+                        <span class="feature-text">Suporte por email</span>
+                    </li>
+                    <li>
+                        <span class="feature-icon unavailable">✗</span>
+                        <span class="feature-text unavailable">Acesso ao banco de currículos</span>
+                    </li>
+                    <li>
+                        <span class="feature-icon unavailable">✗</span>
+                        <span class="feature-text unavailable">Relatórios avançados</span>
+                    </li>
+                </ul>
+                
+                <button class="plan-button secondary" onclick="selectPlan('basico')">
+                    <span class="loading-spinner"></span>
+                    Começar Agora
+                </button>
+            </div>
+
+            <!-- Plano Profissional -->
+            <div class="plan-card popular">
+                <div class="plan-header">
+                    <div class="plan-icon">🚀</div>
+                    <h3 class="plan-name">Profissional</h3>
+                    <p class="plan-description">Perfeito para empresas em crescimento</p>
+                </div>
+                
+                <div class="plan-price">
+                    <div class="price-amount">
+                        <span class="price-currency">R$</span>
+                        <span class="monthly-price">199</span>
+                        <span class="yearly-price" style="display: none;">159</span>
+                    </div>
+                    <div class="price-period">/mês</div>
+                    <div class="yearly-savings" style="display: none;">
+                        <span class="original-price">R$ 199</span>
+                        <small>Economize R$ 480/ano</small>
+                    </div>
+                </div>
+                
+                <ul class="plan-features">
+                    <li>
+                        <span class="feature-icon">✓</span>
+                        <span class="feature-text">Até 20 vagas simultâneas</span>
+                    </li>
+                    <li>
+                        <span class="feature-icon">✓</span>
+                        <span class="feature-text">Perfil completo da empresa</span>
+                    </li>
+                    <li>
+                        <span class="feature-icon">✓</span>
+                        <span class="feature-text">Acesso ao banco de currículos</span>
+                    </li>
+                    <li>
+                        <span class="feature-icon">✓</span>
+                        <span class="feature-text">Relatórios básicos</span>
+                    </li>
+                    <li>
+                        <span class="feature-icon">✓</span>
+                        <span class="feature-text">Suporte prioritário</span>
+                    </li>
+                    <li>
+                        <span class="feature-icon">✓</span>
+                        <span class="feature-text">Destaque nas vagas</span>
+                    </li>
+                </ul>
+                
+                <button class="plan-button" onclick="selectPlan('profissional')">
+                    <span class="loading-spinner"></span>
+                    Escolher Plano
+                </button>
+            </div>
+
+            <!-- Plano Empresarial -->
+            <div class="plan-card">
+                <div class="plan-header">
+                    <div class="plan-icon">👑</div>
+                    <h3 class="plan-name">Empresarial</h3>
+                    <p class="plan-description">Para grandes empresas com alta demanda</p>
+                </div>
+                
+                <div class="plan-price">
+                    <div class="price-amount">
+                        <span class="price-currency">R$</span>
+                        <span class="monthly-price">399</span>
+                        <span class="yearly-price" style="display: none;">319</span>
+                    </div>
+                    <div class="price-period">/mês</div>
+                    <div class="yearly-savings" style="display: none;">
+                        <span class="original-price">R$ 399</span>
+                        <small>Economize R$ 960/ano</small>
+                    </div>
+                </div>
+                
+                <ul class="plan-features">
+                    <li>
+                        <span class="feature-icon">✓</span>
+                        <span class="feature-text">Vagas ilimitadas</span>
+                    </li>
+                    <li>
+                        <span class="feature-icon">✓</span>
+                        <span class="feature-text">Perfil premium da empresa</span>
+                    </li>
+                    <li>
+                        <span class="feature-icon">✓</span>
+                        <span class="feature-text">Acesso total ao banco de currículos</span>
+                    </li>
+                    <li>
+                        <span class="feature-icon">✓</span>
+                        <span class="feature-text">Relatórios avançados</span>
+                    </li>
+                    <li>
+                        <span class="feature-icon">✓</span>
+                        <span class="feature-text">Suporte 24/7</span>
+                    </li>
+                    <li>
+                        <span class="feature-icon">✓</span>
+                        <span class="feature-text">Gerente de conta dedicado</span>
+                    </li>
+                </ul>
+                
+                <button class="plan-button" onclick="selectPlan('empresarial')">
+                    <span class="loading-spinner"></span>
+                    Começar Teste Gratuito
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <section class="features-section">
+        <h2 class="section-title">Por que escolher o Mundo PCD</h2>
+        <p class="section-subtitle">Recursos exclusivos para conectar empresas e talentos PCD</p>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-card-icon">🎯</div>
+                <h3 class="feature-card-title">Candidatos Qualificados</h3>
+                <p class="feature-card-description">Acesse um banco de talentos PCD pré-selecionados e qualificados para sua empresa.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-card-icon">📊</div>
+                <h3 class="feature-card-title">Relatórios Detalhados</h3>
+                <p class="feature-card-description">Acompanhe métricas importantes sobre suas vagas e processo de recrutamento.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-card-icon">🤝</div>
+                <h3 class="feature-card-title">Suporte Especializado</h3>
+                <p class="feature-card-description">Nossa equipe especializada em inclusão está sempre pronta para ajudar.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-card-icon">⚡</div>
+                <h3 class="feature-card-title">Processo Ágil</h3>
+                <p class="feature-card-description">Publique vagas rapidamente e receba candidaturas em tempo real.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-card-icon">🔒</div>
+                <h3 class="feature-card-title">Segurança Total</h3>
+                <p class="feature-card-description">Proteção completa dos dados com criptografia de ponta a ponta.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-card-icon">📈</div>
+                <h3 class="feature-card-title">Analytics Avançado</h3>
+                <p class="feature-card-description">Insights detalhados sobre o desempenho das suas publicações de vagas.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="comparison-section">
+        <div class="comparison-container">
+            <h2 class="section-title">Compare os Planos</h2>
+            <p class="section-subtitle">Encontre o plano perfeito para suas necessidades</p>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Recursos</th>
+                        <th>Básico</th>
+                        <th>Profissional</th>
+                        <th>Empresarial</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Vagas Simultâneas</strong></td>
+                        <td>5</td>
+                        <td>20</td>
+                        <td>Ilimitado</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Perfil da Empresa</strong></td>
+                        <td>Básico</td>
+                        <td>Completo</td>
+                        <td>Premium</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Banco de Currículos</strong></td>
+                        <td><span class="cross-icon">✗</span></td>
+                        <td><span class="check-icon">✓</span></td>
+                        <td><span class="check-icon">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Relatórios</strong></td>
+                        <td><span class="cross-icon">✗</span></td>
+                        <td>Básicos</td>
+                        <td>Avançados</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Suporte</strong></td>
+                        <td>Email</td>
+                        <td>Prioritário</td>
+                        <td>24/7</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Destaque nas Vagas</strong></td>
+                        <td><span class="cross-icon">✗</span></td>
+                        <td><span class="check-icon">✓</span></td>
+                        <td><span class="check-icon">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Gerente de Conta</strong></td>
+                        <td><span class="cross-icon">✗</span></td>
+                        <td><span class="cross-icon">✗</span></td>
+                        <td><span class="check-icon">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>API Access</strong></td>
+                        <td><span class="cross-icon">✗</span></td>
+                        <td><span class="cross-icon">✗</span></td>
+                        <td><span class="check-icon">✓</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <h2 class="section-title">Perguntas Frequentes</h2>
+        <p class="section-subtitle">Tire suas dúvidas sobre nossos planos</p>
+        
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <span>Posso trocar de plano a qualquer momento?</span>
+                <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+                Sim! Você pode fazer upgrade ou downgrade do seu plano a qualquer momento. As alterações são aplicadas imediatamente e o valor é ajustado proporcionalmente na sua próxima cobrança.
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <span>Existe período de teste gratuito?</span>
+                <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+                Oferecemos 14 dias de teste gratuito para o plano Profissional e 30 dias para o plano Empresarial. Você pode cancelar a qualquer momento durante o período de teste sem cobrança.
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <span>Como funciona o desconto anual?</span>
+                <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+                Ao escolher a cobrança anual, você economiza 20% em todos os planos. O pagamento é feito antecipadamente e você tem acesso completo por 12 meses.
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <span>Posso cancelar minha assinatura?</span>
+                <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+                Claro! Você pode cancelar sua assinatura a qualquer momento através do painel de controle. Seu acesso continuará ativo até o final do período já pago.
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <span>Quais formas de pagamento são aceitas?</span>
+                <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+                Aceitamos cartões de crédito (Visa, Mastercard, American Express), PIX, boleto bancário e transferência bancária. Para planos anuais, também oferecemos desconto adicional no PIX.
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <span>O que acontece se eu exceder o limite do meu plano?</span>
+                <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+                Entraremos em contato para sugerir um upgrade. Você não será cobrado automaticamente, mas poderá ter limitações temporárias até ajustar seu plano.
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2 class="cta-title">Pronto para Começar?</h2>
+            <p class="cta-subtitle">Junte-se a mais de 500 empresas que já encontram talentos PCD através da nossa plataforma</p>
+            
+            <div class="cta-buttons">
+                <a href="#" class="cta-button" onclick="selectPlan('profissional')">Começar Teste Gratuito</a>
+                <a href="#" class="cta-button secondary" onclick= "openContact()">Falar com Especialista</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div style="max-inline-size: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; text-align: start;">
+            <div>
+                <h3 style="margin-block-end: 1rem; color: #1DB584;">Mundo PCD</h3>
+                <p style="color: #ccc; line-height: 1.6;">Conectando empresas com os melhores talentos PCD do Brasil. Promovendo inclusão e diversidade no mercado de trabalho.</p>
+            </div>
+            
+            <div>
+                <h4 style="margin-block-end: 1rem;">Planos</h4>
+                <ul style="list-style: none; color: #ccc;">
+                    <li style="margin-block-end: 0.5rem;"><a href="#" style="color: #ccc; text-decoration: none;">Básico</a></li>
+                    <li style="margin-block-end: 0.5rem;"><a href="#" style="color: #ccc; text-decoration: none;">Profissional</a></li>
+                    <li style="margin-block-end: 0.5rem;"><a href="#" style="color: #ccc; text-decoration: none;">Empresarial</a></li>
+                    <li style="margin-block-end: 0.5rem;"><a href="#" style="color: #ccc; text-decoration: none;">Comparar Planos</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 style="margin-block-end: 1rem;">Suporte</h4>
+                <ul style="list-style: none; color: #ccc;">
+                    <li style="margin-block-end: 0.5rem;"><a href="#" style="color: #ccc; text-decoration: none;">Central de Ajuda</a></li>
+                    <li style="margin-block-end: 0.5rem;"><a href="#" style="color: #ccc; text-decoration: none;">Contato</a></li>
+                    <li style="margin-block-end: 0.5rem;"><a href="#" style="color: #ccc; text-decoration: none;">FAQ</a></li>
+                    <li style="margin-block-end: 0.5rem;"><a href="#" style="color: #ccc; text-decoration: none;">Status do Sistema</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 style="margin-block-end: 1rem;">Legal</h4>
+                <ul style="list-style: none; color: #ccc;">
+                    <li style="margin-block-end: 0.5rem;"><a href="sobre.html" style="color: #ccc; text-decoration: none;">Sobre</a></li>
+                    <li style="margin-block-end: 0.5rem;"><a href="politica_privacidade.html" style="color: #ccc; text-decoration: none;">Política de Privacidade</a></li>
+                    <li style="margin-block-end: 0.5rem;"><a href="#" style="color: #ccc; text-decoration: none;">Cookies</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div style="border-block-start: 1px solid #555; margin-block-start: 2rem; padding-block-start: 2rem; text-align: center; color: #ccc;">
+            <p>&copy; 2024 Mundo PCD. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        let currentBilling = 'monthly';
+        
+        function toggleBilling(type) {
+            currentBilling = type;
+            
+            // Update toggle buttons
+            document.querySelectorAll('.billing-option').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Update prices
+            const monthlyPrices = document.querySelectorAll('.monthly-price');
+            const yearlyPrices = document.querySelectorAll('.yearly-price');
+            const yearlySavings = document.querySelectorAll('.yearly-savings');
+            
+            if (type === 'yearly') {
+                monthlyPrices.forEach(price => price.style.display = 'none');
+                yearlyPrices.forEach(price => price.style.display = 'inline');
+                yearlySavings.forEach(saving => saving.style.display = 'block');
+            } else {
+                monthlyPrices.forEach(price => price.style.display = 'inline');
+                yearlyPrices.forEach(price => price.style.display = 'none');
+                yearlySavings.forEach(saving => saving.style.display = 'none');
+            }
+        }
+        
+        function selectPlan(planType) {
+            const button = event.target;
+            const spinner = button.querySelector('.loading-spinner');
+            
+            // Show loading
+            spinner.style.display = 'inline-block';
+            button.disabled = true;
+            
+            // Simulate API call
+            setTimeout(() => {
+                spinner.style.display = 'none';
+                button.disabled = false;
+                
+                // Show success message
+                showMessage(`Plano ${planType} selecionado com sucesso! Redirecionando para pagamento...`, 'success');
+                
+                // Redirect after delay
+                setTimeout(() => {
+                    console.log(`Redirecting to payment for plan: ${planType}, billing: ${currentBilling}`);
+                    // window.location.href = `checkout.html?plan=${planType}&billing=${currentBilling}`;
+                }, 2000);
+            }, 1500);
+        }
+        
+        function showMessage(message, type) {
+            // Remove existing messages
+            document.querySelectorAll('.success-message, .error-message').forEach(msg => {
+                msg.remove();
+            });
+            
+            // Create new message
+            const messageDiv = document.createElement('div');
+            messageDiv.className = type === 'success' ? 'success-message' : 'error-message';
+            messageDiv.textContent = message;
+            messageDiv.style.display = 'block';
+            
+            // Insert after hero section
+            const heroSection = document.querySelector('.hero-section');
+            heroSection.insertAdjacentElement('afterend', messageDiv);
+            
+            // Auto remove after 5 seconds
+            setTimeout(() => {
+                messageDiv.remove();
+            }, 5000);
+        }
+        
+        function toggleFaq(element) {
+            const answer = element.nextElementSibling;
+            const toggle = element.querySelector('.faq-toggle');
+            
+            // Close all other FAQs
+            document.querySelectorAll('.faq-answer').forEach(ans => {
+                if (ans !== answer) {
+                    ans.classList.remove('active');
+                }
+            });
+            
+            document.querySelectorAll('.faq-toggle').forEach(tog => {
+                if (tog !== toggle) {
+                    tog.classList.remove('rotated');
+                }
+            });
+            
+            // Toggle current FAQ
+            answer.classList.toggle('active');
+            toggle.classList.toggle('rotated');
+        }
+        
+        function openContact() {
+            // Simulate opening contact modal or redirect
+            showMessage('Redirecionando para falar com nosso especialista...', 'success');
+            setTimeout(() => {
+                console.log('Opening contact form or chat');
+                // window.location.href = 'contact.html';
+            }, 1500);
+        }
+        
+        // Add scroll effect to header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.backgroundColor = 'rgba(29, 181, 132, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.backgroundColor = '';
+                header.style.backdropFilter = '';
+            }
+        });
+        
+        // Add smooth scrolling to all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Add intersection observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all cards and sections
+        document.querySelectorAll('.plan-card, .feature-card, .faq-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

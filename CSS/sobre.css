@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+.header {
+    background-color: #0047BB;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+}
+.logo {
+    max-width: 250px;
+    margin: 10px auto;
+}
+.content {
+    padding: 20px;
+    line-height: 1.6;
+}
+h2 {
+    color: #0047BB;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+.value-item {
+    margin-bottom: 20px;
+}
+.value-title {
+    font-weight: bold;
+}

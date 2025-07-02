@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard PCD</title>
+    <link rel="stylesheet" href="CSS/dashboard_candidato.css">
+</head>
+
+<body>
+    <header class="header">
+        <a href="#" class="logo">PCD</a>
+        <div class="nav-menu">
+            <a href="pg_vagas.html" class="nav-link">Buscar Vagas</a>
+            <a href="pg_cursos.html" class="nav-link">Buscar Cursos</a>
+            <div class="user-profile">
+                <span>Usuário</span>
+                <div class="profile-pic"></div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="sidebar">
+            <div class="menu-item active" data-section="panel">
+                <div class="menu-icon">🏠</div>
+                Painel do usuário
+            </div>
+            <div class="menu-item" data-section="vagas">
+                <div class="menu-icon">💼</div>
+                Minhas Vagas
+            </div>
+            <div class="menu-item" data-section="curriculo">
+                <div class="menu-icon">📄</div>
+                Currículo
+            </div>
+            <div class="menu-item" data-section="cursos">
+                <div class="menu-icon">🎓</div>
+                Meus cursos
+            </div>
+            <div class="menu-item" data-section="conta">
+                <div class="menu-icon">⚙️</div>
+                Conta
+            </div>
+        </div>
+        <div class="content">
+            <div class="content-section active" id="panel">
+                <div class="featured-content">
+                    <img src="Images/icon_dashboard.png" alt="Accessibility Icon" class="featured-image">
+                    <div>
+                        <h2 class="featured-title">Empresas parceiras</h2>
+                        <p>Encontre vagas em empresas que valorizam a diversidade e inclusão.</p>
+                    </div>
+                    <div class="nav-buttons">
+                        <button class="nav-button">←</button>
+                        <button class="nav-button">→</button>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="status-card">
+                        <img src="Images/icon_curriculo.png" alt="Profile Icon" class="status-icon">
+                        <div class="status-info">
+                            <div class="status-title">Currículo</div>
+                        </div>
+                        <div class="status-value">10% preenchido</div>
+                    </div>
+
+                    <div class="status-card">
+                        <img src="Images/icon_inscrição.png" alt="Applications Icon" class="status-icon">
+                        <div class="status-info">
+                            <div class="status-title">Inscrições</div>
+                        </div>
+                        <div class="status-value">0 Inscrições</div>
+                    </div>
+
+                    <div class="status-card">
+                        <img src="Images/icon_inscrições.png" alt="Courses Icon" class="status-icon">
+                        <div class="status-info">
+                            <div class="status-title">Cursos Inscritos</div>
+                        </div>
+                        <div class="status-value">0 Cursos</div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section" id="vagas">
+                <div class="dashboard-card">
+                    <h2 class="card-title">Vagas Inscritas</h2>
+                    <div class="card-content">
+                        <p>0 Inscrições</p>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section" id="curriculo">
+                <div class="dashboard-card">
+                    <div class="tab-buttons">
+                        <button class="tab-button active">Dados Pessoais</button>
+                    </div>
+
+                    <div class="profile-section">
+                        <div class="profile-photo">Definir foto</div>
+                        <div>
+                            <h3>Usuário</h3>
+                            <div class="form-group">
+                                <label class="form-label required">Anexar Currículo:</label>
+                                <div style="display: flex; gap: 10px; align-items: center;">
+                                    <input type="file" class="form-input">
+                                    <button class="btn">Adicionar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-container">
+                        <div class="form-group">
+                            <label class="form-label required">CPF:</label>
+                            <input type="text" class="form-input" value="" placeholder="000.000.000-00">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label required">Data de nascimento:</label>
+                            <input type="date" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label required">Estado civil:</label>
+                            <select class="form-input">
+                                <option value="" disabled selected>Selecione</option>
+                                <option value="solteiro">Solteiro</option>
+                                <option value="casado">Casado</option>
+                                <option value="divorciado">Divorciado</option>
+                                <option value="viuvo">Viúvo</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label required">Gênero:</label>
+                            <select class="form-input">
+                                <option value="" disabled selected>Selecione</option>
+                                <option value="masculino">Masculino</option>
+                                <option value="feminino">Feminino</option>
+                                <option value="outros">Outros</option>
+                            </select>
+                        </div>
+                        <div class="form-group full-width">
+                            <label class="form-label required">Mãe:</label>
+                            <input type="text" class="form-input">
+                        </div>
+                        <div class="form-group full-width">
+                            <label class="form-label">Pai:</label>
+                            <input type="text" class="form-input">
+                        </div>
+                    </div>
+                    <div class="form-row">
+
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label required">CEP:</label>
+                            <input type="text" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label required">Cidade:</label>
+                            <input type="text" class="form-input" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label required">Estado:</label>
+                            <input type="text" class="form-input" readonly>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group" style="flex-grow: 3;">
+                            <label class="form-label required">Rua:</label>
+                            <input type="text" class="form-input" readonly>
+                        </div>
+                        <div class="form-group small">
+                            <label class="form-label required">Número:</label>
+                            <input type="text" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Complemento:</label>
+                            <input type="text" class="form-input">
+                        </div>
+                    </div>
+                    <div class="form-group full-width">
+                        <label class="form-label required">Telefone:</label>
+                        <input type="tel" class="form-input" placeholder="(99) 99999-9999">
+                    </div>
+                    <div class="form-group full-width">
+                        <label class="form-label required">E-mail:</label>
+                        <input type="email" class="form-input" placeholder="seuemail@gmail.com">
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: flex-end; margin-block-start: 20px;">
+                    <a href=""><button class="btn-next">Salvar</button></a>
+                </div>
+            </div>
+            <div class="content-section" id="cursos">
+                <div class="dashboard-card">
+                    <h2 class="card-title">Meus Cursos</h2>
+                    <div class="card-content">
+                        <p>Você ainda não está inscrito em nenhum curso.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section" id="conta">
+                <div class="dashboard-card">
+                    <h2 class="card-title">Configurações da Conta</h2>
+                    <div class="card-content">
+                        <div class="form-group">
+                            <label class="form-label">Email:</label>
+                            <input type="email" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Senha atual:</label>
+                            <input type="password" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Nova senha:</label>
+                            <input type="password" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Confirmar nova senha:</label>
+                            <input type="password" class="form-input">
+                        </div>
+                        <button class="btn" style="margin-block-start: 15px;">Salvar alterações</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.menu-item').forEach(item => {
+            item.addEventListener('click', function () {
+                document.querySelectorAll('.menu-item').forEach(menuItem => {
+                    menuItem.classList.remove('active');
+                });
+                this.classList.add('active');
+                const sectionToShow = this.getAttribute('data-section');
+                document.querySelectorAll('.content-section').forEach(section => {
+                    section.classList.remove('active');
+                });
+                document.getElementById(sectionToShow).classList.add('active');
+            });
+        });
+    </script>
+</body>
+<script src="JS/dashboard_cliente.js"></script>
+</html>

@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    text-decoration: none;
+}
+
+body {
+    background-color: #f0f0f0;
+}
+
+.header {
+    background-color: #0047AB;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.user-profile {
+    background-color: white;
+    border-radius: 50px;
+    padding: 8px 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #ddd;
+}
+
+.card {
+    background-color: white;
+    border-radius: 20px;
+    margin: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.course-header {
+    background-color: #1e7e43;
+    color: white;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.excel-icon {
+    background-color: white;
+    color: #1e7e43;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.course-title {
+    font-size: 36px;
+    margin-bottom: 5px;
+}
+
+.course-info {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.duration, .modality {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+}
+
+.online-badge {
+    background-color: white;
+    color: #1e7e43;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.course-description {
+    padding: 0 30px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: white;
+}
+
+.tab-container {
+    padding: 0 30px;
+    display: flex;
+    margin-top: 20px;
+}
+
+.tab {
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #0047AB;
+    cursor: pointer;
+}
+
+.tab.active::after {
+    content: "";
+    display: block;
+    height: 3px;
+    background-color: #0047AB;
+    margin-top: 15px;
+}
+
+.tab-content {
+    padding: 30px;
+    min-height: 250px;
+}
+
+.content-tab {
+    display: none;
+}
+
+.content-tab.active {
+    display: block;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.module-list {
+    list-style: none;
+}
+
+.module-list li {
+    margin-bottom: 15px;
+    padding-left: 20px;
+    position: relative;
+    color: #0047AB;
+    font-weight: bold;
+}
+
+.module-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #0047AB;
+}
+
+.details-section {
+    margin-bottom: 15px;
+}
+
+.details-section h3 {
+    color: #0047AB;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.details-section p {
+    margin-bottom: 15px;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    border-top: 1px solid #eee;
+}
+
+.btn-buy {
+    background-color: #0047AB;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}

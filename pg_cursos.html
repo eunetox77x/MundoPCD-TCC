@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo PCD - Cursos</title>
+    <link rel="stylesheet" href="CSS/pg_cursos.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo-section">
+                <div class="logo">PCD</div>
+                <h1>Cursos</h1>
+            </div>
+            <div class="user-section">
+                <div class="user-info">
+                    <img src="/api/placeholder/40/40" alt="Avatar" class="user-avatar">
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container main-content">
+            <aside class="sidebar">
+                <h2>Ordenar por:</h2>
+                
+                <div class="filter-section">
+                    <label for="course-name">Nome do Curso</label>
+                    <input type="text" id="course-name" placeholder="Digite o nome do curso">
+                </div>
+                
+                <div class="filter-section">
+                    <label for="knowledge-area">Área de Conhecimento:</label>
+                    <input type="text" id="knowledge-area" placeholder="Digite a área de conhecimento">
+                </div>
+                
+                <div class="filter-section">
+                    <label for="duration">Tempo de duração:</label>
+                    <input type="text" id="duration" placeholder="Digite o tempo de duração do curso">
+                </div>
+                
+                <button class="btn-filter">Filtrar</button>
+            </aside>
+            
+            <section class="content">
+                <div id="courses-container">
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo PCD - Cadastre Sua Empresa</title>
+    <link rel="stylesheet" href="CSS/cadastro_empresa.css">
+</head>
+<body class="auth-page">
+    <div class="auth-container">
+        <div class="logo-container">
+            <div class="logo">
+                <img src="Images/logo_pcd_container.png" alt="Logo PCD" class="pcd-logo">
+            </div>
+        </div>
+        
+        <div class="auth-card">
+            <h1>Realize seu cadastro</h1>
+            
+            <form class="auth-form">
+                <div class="form-group">
+                    <label for="text">Nome Empresa <span class="required">*</span></label>
+                    <input type="text" id="nome-empresa" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="text">Nome do Responsável <span class="required">*</span></label>
+                    <input type="text" id="nome-responsavel" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail <span class="required">*</span></label>
+                    <input type="email" id="email" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="telefone">Telefone <span class="required">*</span></label>
+                    <input type="tel" id="telefone" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="cpf">CNPJ <span class="required">*</span></label>
+                    <input type="text" id="cnpj" class="form-control" >
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Senha (8 dígitos) <span class="required">*</span></label>
+                    <input type="password" id="senha" class="form-control" >
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Confirmar Senha <span class="required">*</span></label>
+                    <input type="password" id="confirmar-senha" class="form-control" >
+                </div>
+                
+                <div class="form-check">
+                    <input type="checkbox" id="terms" checked>
+                    <label for="terms">Aceito os <a href="#" class="terms-link">termos e condições</a></label>
+                </div>
+                
+                <button type="submit" class="btn-blue">Concluir</button>
+                
+                <button type="button" class="btn-gray" onclick="window.location.href='login_empresa'">Já tenho cadastro</button>
+            </form>
+        </div>
+        
+        <footer class="auth-footer">
+            <div>Mundo PCD</div>
+            <div>&copy; 2024</div>
+            <div><a href="politica_privacidade.html">Política de privacidade</a></div>
+        </footer>
+    </div>
+</body>
+<script src="JS/cadastroEmpresa.js"></script>
+</html>
